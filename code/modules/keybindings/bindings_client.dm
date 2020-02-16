@@ -57,14 +57,20 @@
 			else
 				adminhelp()
 			return
-		if("F2") // Screenshot. Hold shift to choose a name and location to save in
+		if("F2", "O") // Screenshot. Hold shift to choose a name and location to save in
 			ooc()
 			return
-		if("F3")
-			mob.say_wrapper()
+		if("F3", "T")
+			if(keys_held["Shift"])
+				mob.whisper_wrapper()
+			else
+				mob.say_wrapper()
 			return
-		if("F4")
+		if("F4", "M")
 			mob.me_wrapper()
+			return
+		if("L")
+			looc()
 			return
 		if("F12") // Toggles minimal HUD
 			mob.button_pressed_F12()
