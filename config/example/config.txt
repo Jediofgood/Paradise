@@ -477,3 +477,16 @@ ENABLE_AUTO_PROFILER
 
 ## Host for a custom 2FA server. Comment to disable. Do not use a trailing slash or https.
 #2FA_HOST http://127.0.0.1:8080
+
+
+## Uncomment to disable respawning by default.
+#DISABLE_RESPAWN
+
+## Uncomment to allow players joined as observer respawning.
+#RESPAWN_OBSERVER
+
+## Respawn delay in minutes before one may respawn as a crew member.
+RESPAWN_DELAY 20
+
+## Respawn delay in minutes before one may respawn as a drone.
+RESPAWN_DELAY_DRONE 10
