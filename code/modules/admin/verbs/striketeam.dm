@@ -141,7 +141,7 @@ GLOBAL_VAR_INIT(sent_strike_team, 0)
 	var/datum/preferences/A = new()//Randomize appearance for the commando.
 	if(is_leader)
 		A.age = rand(35,45)
-		A.real_name = "[commando_leader_rank] [commando_name]"
+		A.real_name = "[commando_leader_rank] [A.gender==FEMALE ? pick(GLOB.last_names_female) : commando_name]"
 	else
 		A.real_name = "[commando_name]"
 	A.copy_to(new_commando)
