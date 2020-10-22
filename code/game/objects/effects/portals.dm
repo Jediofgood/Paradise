@@ -15,6 +15,7 @@
 	var/can_multitool_to_remove = FALSE
 	var/ignore_tele_proof_area_setting = FALSE
 	var/one_use = FALSE // Does this portal go away after one teleport?
+	var/can_mecha_pass = FALSE
 
 /obj/effect/portal/New(loc, turf/target, creator = null, lifespan = 300)
 	..()
@@ -87,6 +88,9 @@
 		. = FALSE
 
 	if(!M.simulated || iseffect(M))
+		. = FALSE
+
+	if(!can_mecha_pass && M.anchored && ismecha(M))
 		. = FALSE
 
 /obj/effect/portal/proc/teleport(atom/movable/M)
